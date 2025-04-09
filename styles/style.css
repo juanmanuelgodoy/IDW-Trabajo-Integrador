@@ -1,102 +1,63 @@
-footer{ 
-    .footer-container {
-      background-color: #ffbc9a; 
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      font-family: sans-serif;
-    }
-
-    .footer-section {
-      width: 30%;
-    }
-
-    .footer-left,
-    .footer-center,
-    .footer-right {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .footer-left {
-      align-items: flex-start;
-    }
-
-    .footer-center {
-      align-items: center;
-    }
-
-    .footer-right {
-      align-items: flex-end;
-    }
-
-    .footer-section ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer-section a {
-      text-decoration: none;
-      color: #0077cc;
-      margin-top: 5px;
-    }
-
-    .footer-section img {
-      width: 80px;
-      margin-bottom: 5px;
-    }
-
-    .footer-icon {
-      height: 80px;
-      width: 80px;
-      margin: 0 8px;
-    }
-    .footer-copy {
-  width: 100%;
-  text-align: center;
-  margin-top: 20px;
-  font-size: 14px;
-  color: #000000;
-  background-color: #ffbc9a; /* Fondo durazno */
-}
+.footer-container {
+    background-color: #ffbc9a;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-family: sans-serif;
 }
 
-#configuracion div/foter head#
-<footer>
-      <div class="footer-container">
-        <div class= "footer-section footer-left">   
-            <ul>
-                <li><img src="img/Logo_fiestaleza_kids_300x100.png" alt="Fiestaleza Kids" width="250"></li>
-                <li>Ofrecemos diversión en contacto puro con la naturaleza para que sientan la fortaleza de compartir desde la infancia.</li>
-            </ul>     
-        </div>
-        <div class="footer-section footer-center">
-            <ul>
-                <li><a href="contacto.html">Comunícate</a></li>
-            </ul>
-        </div>
-        <div class="footer-section footer-right">
-            <ul>
-                <li><strong>Oficina Central</strong></li>
-                <li><a href="https://wa.me/543456509543" target="_blank">+54 3456-509543</a></li>
-                <li><a href="mailto:aracelitisocco16@gmail.com">aracelitisocco16@gmail.com</a></li>
-                <li>Dirección: Recoleta 125 - CABA</li>
-                <br/>
-                <a href="https://www.instagram.com/tisoccoaraceli" target="_blank">
-                    <img src="img/Logo_instagram_fiestaleza_kids.png" alt="Instagram" class="footer-icon">
-                  </a>
-                <a href="https://www.facebook.com/tisoccoaraceli" target="_blank">
-                    <img src="img/Logo_facebook_fiestaleza_kids.png" alt="Facebook" class="footer-icon">
-                  </a>
-                <a href="https://www.linkedin.com/in/tisoccoaraceli" target="_blank">
-                    <img src="img/Logo_linkedin_fiestaleza_kids.png" alt="LinkedIn" class="footer-icon">
-                  </a> 
-            </ul>
-        </div>
-      </div>
+.footer-section {
+    width: 30%;
+}
 
-      <div class="footer-copy">
-          <p>© 2025 FIESTALEZA KIDS | Todos los derechos reservados.</p>
-      </div>
-    </footer>
+.footer-left,
+.footer-center,
+.footer-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-left {
+    align-items: flex-start;
+}
+
+.footer-center {
+    align-items: center;
+}
+
+.footer-right {
+    align-items: flex-end;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: #0077cc;
+    margin-top: 5px;
+}
+
+.footer-section img {
+    width: 80px;
+    margin-bottom: 5px;
+}
+
+.footer-icon {
+    height: 80px;
+    width: 80px;
+    margin: 0 8px;
+}
+
+.footer-copy {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #000000;
+    background-color: #ffbc9a;
+    /* Fondo durazno */
+}
