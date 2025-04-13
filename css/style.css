@@ -1,0 +1,116 @@
+/* BODY */
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #82ffb4;
+}
+ /* HEADER */ 
+ .logo {
+    height: 80px;
+    margin-right: 18px;
+    margin-top: 10px; /* Espacio superior */
+    float: center; /* Alinea la imagen al centro */
+
+    border-radius: 8px; /* opcional: bordes redondeados */
+    transition: transform 0.3s ease; /* animación suave */
+}
+.logo:hover {
+    transform: scale(2.05); /* efecto al pasar el mouse */
+}
+header {
+    background-color: #ffbc9a;
+    padding: 20px;
+    color: #000000;
+    text-align: right;
+}
+header h1 {
+    font-size: 2em;
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+nav a {
+    text-decoration: none;       /* Quita el subrayado */
+    color: #000000; /*color del texto */
+    margin-right: 10px; /* espacio entre enalces */
+    padding: 8px 16px; /* espacio interno para que parezcan botones */
+    background-color: #ff4000; /* Fondo durazno */
+    border-radius: 5px; /* bordes redondeados */ 
+    transition: background-color 0.3s, color 0.3s; /* Animación suave */
+}
+nav a:hover {    
+    background-color: #82ffb4;     /* Fondo al pasar el mouse */ 
+    color: white; 
+}
+ /* MAIN */
+
+ /* FOOTER */
+
+.footer-container {
+    background-color: #ffbc9a;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-family: sans-serif;
+}
+
+.footer-section {
+    width: 30%;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-left {
+    align-items: flex-start;
+}
+
+.footer-center {
+    align-items: center;
+}
+
+.footer-right {
+    align-items: flex-end;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: #ff4000;
+    margin-top: 5px;
+}
+.footer-section a:hover {
+    color: #000000; /* Color al pasar el mouse */
+}
+
+.footer-section img {
+    width: 80px;
+    margin-bottom: 5px;
+}
+
+.footer-icon {
+    height: 80px;
+    width: 80px;
+    margin: 0 8px;
+}
+
+.footer-copy {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #000000;
+    background-color: #ffbc9a;
+    /* Fondo durazno */
+}
