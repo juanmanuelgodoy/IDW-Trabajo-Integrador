@@ -64,11 +64,26 @@ section ol {
     padding: 0;
 }
 
+section h2 {
+    margin-left: 10px;
+}
+
+section ul li {
+    list-style: none;
+    margin-bottom: 5px;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    
+}
+
 section ol li {
     margin-bottom: 40px;
     background-color: #f5f5f5;
     padding: 20px;
     border-radius: 8px;
+    text-decoration: none;
 }
 
 section ol li img {
