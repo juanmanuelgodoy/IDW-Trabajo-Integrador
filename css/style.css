@@ -14,7 +14,7 @@ body {
 
 /* HEADER */
 header {
-    background-color: #bdf5d5; /* verde pastel */
+    background-color: #bdf5d5;
     padding: 20px;
     text-align: center;
 }
@@ -28,7 +28,7 @@ header ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 30px; /* separación equidistante entre los enlaces */
+    gap: 30px; 
 }
 
 header li a {
@@ -45,7 +45,7 @@ header li a:hover {
 main {
     padding: 30px;
     text-align: center;
-    background-color: #fffdf5; /* fondo suave para el contenido */
+    background-color: #fffdf5; 
 }
 
 h2 {
