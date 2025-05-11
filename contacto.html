@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IDW S.A.</title>
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <h1> IDW S.A. - Alquiler de Salones Infantiles </h1>
@@ -15,17 +18,77 @@
             <li><a href="dashboard.html"> Administrador </a></li>
         </ul>
     </header>
-    <main>
-        <h2>Queremos ser parte...</h2>
-        <p>Contanos de tu Evento...veni a soñar con nosotros</p>
-        <h3>Consultas</h3>
-        <p>Telefono: +54 (2302) 15 60 33 37</p>
-        <p>Correo Electrónico: <a href="https://forms.gle/VqHADuCSnhAa1vEq7">Ir al Formulario</a></p>
-        <p>Chat de WhatsApp: <a href="https://web.whatsapp.com/" target="_blank">Enviar mensaje<a></p>
-        <p>Como llegar...: <a href="https://maps.app.goo.gl/RuJVHvftvuoEnJ1b6" width="600" height="450"
-                style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>Donde estamos</a></p>
+    <main class="container my-5">
+        <section class="text-center mb-5">
+            <h2 class="display-5 mb-3">Queremos ser parte...</h2>
+            <p class="lead text-muted">Contanos de tu Evento... vení a soñar con nosotros</p>
+            <hr class="w-25 mx-auto my-4 border-2 border-primary">
+        </section>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-10 mb-4">
+                <div class="card shadow-sm mx-auto bg-light" style="max-width: 500px;">
+                    <div class="card-body">
+                        <h4 class="h4 mb-4 text-center">Contáctanos</h4>
+                        <form>
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mensaje" class="form-label">Mensaje</label>
+                                <textarea class="form-control" id="mensaje" rows="3" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 py-2">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5 col-md-10 mb-4">
+                <div class="card shadow-sm mx-auto h-100 bg-light" style="max-width: 500px;">
+                    <div class="card-body d-flex flex-column">
+                        <h4 class="h4 mb-4 text-center">Nuestros Canales</h4>
+
+                        <div class="d-flex flex-column justify-content-center flex-grow-1">
+                            <ul class="list-group list-group-flush text-center border-0">
+                                <li class="list-group-item border-0 py-2 text-secondary">
+                                    <i class="bi bi-telephone"></i> +54 2302 15 60 33 37
+                                </li>
+                                <li class="list-group-item border-0 py-2 text-secondary">
+                                    <i class="bi bi-envelope"></i> idwsa@gmail.com
+                                </li>
+                                <li class="list-group-item border-0 py-2 text-secondary">
+                                    <i class="bi bi-geo-alt"></i> Recoleta 125 - CABA
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-4 px-3 pb-3">
+                            <div class="row g-2">
+                                <div class="col-12 col-sm-6">
+                                    <a href="https://wa.me/543123456789" class="btn btn-success w-100 py-2">
+                                        <i class="bi bi-whatsapp"></i> WhatsApp
+                                    </a>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <a href="https://maps.app.goo.gl/RuJVHvftvuoEnJ1b6"
+                                        class="btn btn-outline-primary w-100 py-2">
+                                        <i class="bi bi-map"></i> Ver Mapa
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
+
     <hr />
     <footer>
         <div class="footer-container">
@@ -65,4 +128,6 @@
         </div>
     </footer>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </html>
