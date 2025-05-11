@@ -1,18 +1,18 @@
-/* Reset general */
+/* Reset general
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+}*/
 
-/* BODY */
+/* BODY
 body {
     font-family: Arial, sans-serif;
     background-color: #fff;
     color: #000;
-}
+}*/
 
-/* HEADER */
+/* HEADER
 header {
     background-color: #bdf5d5;
     padding: 20px;
@@ -39,9 +39,9 @@ header li a {
 
 header li a:hover {
     color: #007bff;
-}
+}*/
 
-/* MAIN */
+/* MAIN
 main {
     padding: 30px;
     text-align: center;
@@ -56,9 +56,9 @@ h2 {
 p {
     font-style: italic;
     margin-bottom: 30px;
-}
+}*/
 
-/* LISTA DE SALONES */
+/* LISTA DE SALONES 
 section ol {
     list-style: none;
     padding: 0;
@@ -153,5 +153,5 @@ section ol li img {
     font-size: 14px;
     color: #000000;
     background-color: #ffbc9a;
-    /* Fondo durazno */
-}
+    /* Fondo durazno 
+}*/
