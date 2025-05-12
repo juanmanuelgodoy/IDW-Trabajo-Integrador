@@ -6,6 +6,7 @@
 }*/
 
 /* BODY */
+<<<<<<< HEAD
 /*body {
     font-family: Arial, sans-serif;
     background-color: #fff;
@@ -14,6 +15,16 @@
 
 /* HEADER */
 /*header {
+=======
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+} */
+
+/* HEADER */
+/* header {
+>>>>>>> 4761bd024a0156d48ec64aa5a2ed7dec0ec0dcca
     background-color: #bdf5d5;
     padding: 40px 20px;
     text-align: center;
@@ -44,10 +55,17 @@ header li a {
 
 header li a:hover {
     color: #007bff;
+<<<<<<< HEAD
 }*/
 
 /* MAIN */
 /*main {
+=======
+} */
+
+/* MAIN */
+/* main {
+>>>>>>> 4761bd024a0156d48ec64aa5a2ed7dec0ec0dcca
     padding: 30px;
     text-align: center;
     background-color: #fffdf5;
@@ -61,10 +79,17 @@ h2 {
 p {
     font-style: italic;
     margin-bottom: 30px;
+<<<<<<< HEAD
 }*/
 
 /* LISTA DE SALONES */
 /*section ol {
+=======
+} */
+
+/* LISTA DE SALONES */
+/* section ol {
+>>>>>>> 4761bd024a0156d48ec64aa5a2ed7dec0ec0dcca
     list-style: none;
     padding: 0;
 }*/
@@ -94,9 +119,9 @@ section ul li {
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 6px;
-}
+}  */
 
-.footer-container {
+/*.footer-container {
     background-color: #ffbc9a;
     padding: 20px;
     display: flex;
@@ -157,6 +182,7 @@ section ul li {
     font-size: 14px;
     color: #000000;
     background-color: #ffbc9a;
+<<<<<<< HEAD
     /* Fondo durazno 
 }*/
 
@@ -311,4 +337,6 @@ section ul li {
     .topbar .brand {
         font-size: 0.9rem;
     }
+=======
+>>>>>>> 4761bd024a0156d48ec64aa5a2ed7dec0ec0dcca
 }*/
