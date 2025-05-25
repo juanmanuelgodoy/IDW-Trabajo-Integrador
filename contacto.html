@@ -1,68 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IDW S.A.</title>
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <title>IDW S.A.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 </head>
+
 <body>
-    <header>
-        <h1> IDW S.A. - Alquiler de Salones Infantiles </h1>
-        <ul>
-            <li><a href="institucional.html"> Quienes somos </a></li>
-            <li><a href="contacto.html"> Contacto </a></li>
-            <li><a href="dashboard.html"> Administrador </a></li>
-        </ul>
+    <header class="bg-warning text-white">
+        <div class="container py-3">
+            <h1 class="h3 mb-0 text-center text-md-start">IDW S.A. - Alquiler de Salones Infantiles</h1>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal" aria-expanded="false" aria-label="Menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto gap-2 ">
+                        <li class="nav-item gap-2">
+                            <a class="text-decoration-none" href="index.html">Página principal </a>
+                        </li>
+                        <li class="nav-item gap-2">
+                            <a class="text-decoration-none" href="institucional.html"> Quienes somos </a>
+                        </li>
+                        <li class="nav-item gap-2">
+                            <a class="text-decoration-none" href="dashboard.html">Administrador </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
-    <main>
-        <h2>Queremos ser parte...</h2>
-        <p>Contanos de tu Evento...veni a soñar con nosotros</p>
-        <h3>Consultas</h3>
-        <p>Telefono: +54 (2302) 15 60 33 37</p>
-        <p>Correo Electrónico: <a href="https://forms.gle/VqHADuCSnhAa1vEq7">Ir al Formulario</a></p>
-        <p>Chat de WhatsApp: <a href="https://web.whatsapp.com/" target="_blank">Enviar mensaje<a></p>
-        <p>Como llegar...: <a href="https://maps.app.goo.gl/RuJVHvftvuoEnJ1b6" width="600" height="450"
-                style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>Donde estamos</a></p>
-    </main>
-    <hr />
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section footer-left">
-                <ul>
-                    <li><img src="img/Logo_fiestaleza_kids_300x100.png" alt="Fiestaleza Kids" width="250"></li>
-                    <li>Ofrecemos diversión en contacto puro con la naturaleza para que sientan la fortaleza de
-                        compartir desde la infancia.</li>
-                </ul>
+    <main class="container my-5">
+        <section class="text-center mb-5">
+            <h2 class="display-5 mb-3">Queremos ser parte...</h2>
+            <p class="lead text-muted">Contanos de tu Evento... vení a soñar con nosotros</p>
+            <hr class="w-25 mx-auto my-4 border-2 border-primary">
+        </section>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-10 mb-4">
+                <div class="card shadow-sm mx-auto bg-light" style="max-width: 500px;">
+                    <div class="card-body">
+                        <h4 class="h4 mb-4 text-center">Contáctanos</h4>
+                        <form>
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mensaje" class="form-label">Mensaje</label>
+                                <textarea class="form-control" id="mensaje" rows="3" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 py-2">Enviar</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="footer-section footer-center">
-                <ul>
-                    <li><a href="contacto.html">Comunícate</a></li>
-                </ul>
-            </div>
-            <div class="footer-section footer-right">
-                <ul>
-                    <li><strong>Oficina Central</strong></li>
-                    <li><a href="https://wa.me/543123456789" target="_blank">+54 3123456789</a></li>
-                    <li><a href="mailto:idwsa@gmail.com">idwsa@gmail.com</a></li>
-                    <li>Dirección: Recoleta 125 - CABA</li>
-                    <br />
-                    <a href="https://www.instagram.com/idwsa" target="_blank">
-                        <img src="img/Logo_instagram_fiestaleza_kids.png" alt="Instagram" class="footer-icon">
-                    </a>
-                    <a href="https://www.facebook.com/idwsa" target="_blank">
-                        <img src="img/Logo_facebook_fiestaleza_kids.png" alt="Facebook" class="footer-icon">
-                    </a>
-                    <a href="https://www.linkedin.com/in/idwsa" target="_blank">
-                        <img src="img/Logo_linkedin_fiestaleza_kids.png" alt="LinkedIn" class="footer-icon">
-                    </a>
-                </ul>
+
+            <div class="col-lg-5 col-md-10 mb-4">
+                <div class="card shadow-sm mx-auto h-100 bg-light" style="max-width: 500px;">
+                    <div class="card-body d-flex flex-column">
+                        <h4 class="h4 mb-4 text-center">Nuestros Canales</h4>
+
+                        <div class="d-flex flex-column justify-content-center flex-grow-1">
+                            <ul class="list-group list-group-flush text-center border-0">
+                                <li class="list-group-item border-0 py-2 text-secondary">
+                                    <i class="bi bi-telephone"></i> +54 3123456789
+                                </li>
+                                <li class="list-group-item border-0 py-2 text-secondary">
+                                    <i class="bi bi-envelope"></i> idwsa@gmail.com
+                                </li>
+                                <li class="list-group-item border-0 py-2 text-secondary">
+                                    <i class="bi bi-geo-alt"></i> Recoleta 125 - CABA
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-4 px-3 pb-3">
+                            <div class="row g-2">
+                                <div class="col-12 col-sm-6">
+                                    <a href="https://wa.me/543123456789" class="btn btn-success w-100 py-2">
+                                        <i class="bi bi-whatsapp"></i> WhatsApp
+                                    </a>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <a href="https://maps.app.goo.gl/RuJVHvftvuoEnJ1b6"
+                                        class="btn btn-outline-primary w-100 py-2">
+                                        <i class="bi bi-map"></i> Ver Mapa
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="footer-copy">
-            <p>© 2025 IDW S.A. | Todos los derechos reservados.</p>
+    </main>
+
+    <hr />
+    <footer class="bg-warning text-dark py-1">
+        <div class="container">
+            <div class="row align-items-center text-center text-md-start">
+                <!-- Izquierda -->
+                <div class="col-md-4 mb-1">
+                    <img src="img/Logo_fiestaleza_kids_300x100.png" alt="Fiestaleza Kids" class="img-fluid"
+                        style="max-width: 150px;">
+                    <p class="m-0 small">Diversión en la naturaleza desde la infancia.</p>
+                </div>
+
+                <!-- Centro -->
+                <div class="col-md-4 mb-1 d-flex justify-content-center">
+                    <a href="contacto.html" class="btn btn-light text-dark fw-bold px-4 py-2">Comunícate con
+                        nosotros</a>
+                </div>
+
+                <!-- Derecha -->
+                <div class="col-md-4 mb-1 text-md-end text-center">
+                    <p class="m-0 small fw-bold">Oficina Central</p>
+                    <p class="m-0 small"><a href="https://wa.me/543123456789"
+                            class="text-decoration-none text-primary">+54 3123456789</a></p>
+                    <p class="m-0 small"><a href="mailto:idwsa@gmail.com"
+                            class="text-decoration-none text-primary">idwsa@gmail.com</a></p>
+                    <p class="m-0 small">Recoleta 125 - CABA</p>
+                    <div class="d-flex justify-content-md-end justify-content-center gap-1 mt-1">
+                        <a href="https://www.instagram.com/idwsa" target="_blank">
+                            <img src="img/Logo_instagram_fiestaleza_kids.png" alt="Instagram"
+                                style="width: 40px; height: 40px;">
+                        </a>
+                        <a href="https://www.facebook.com/idwsa" target="_blank">
+                            <img src="img/Logo_facebook_fiestaleza_kids.png" alt="Facebook"
+                                style="width: 40px; height: 40px;">
+                        </a>
+                        <a href="https://www.linkedin.com/in/idwsa" target="_blank">
+                            <img src="img/Logo_linkedin_fiestaleza_kids.png" alt="LinkedIn"
+                                style="width: 40px; height: 40px;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center pt-1 border-top">
+                <p class="mb-0 small">© 2025 IDW S.A. | Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

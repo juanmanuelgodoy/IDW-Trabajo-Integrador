@@ -1,11 +1,18 @@
+<<<<<<< HEAD
 
 /* 
 * { 
     margin: 0; 
+=======
+/* Reset general 
+* {
+    margin: 0;
+>>>>>>> 4761bd024a0156d48ec64aa5a2ed7dec0ec0dcca
     padding: 0;
     box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 body {
     font-family: Arial, sans-serif;
     background-color: #82ffb4;
@@ -28,6 +35,18 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+=======
+/* BODY */
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+} */
+
+/* HEADER */
+/* header {
+    background-color: #bdf5d5;
+>>>>>>> 4761bd024a0156d48ec64aa5a2ed7dec0ec0dcca
     padding: 20px;
     background-color: #ffbc9a;
 }
@@ -38,7 +57,46 @@ header h1 {
     margin: 0;
 }
 
+<<<<<<< HEAD
 nav ul {
+=======
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+}
+
+header li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+header li a:hover {
+    color: #007bff;
+} */
+
+/* MAIN */
+/* main {
+    padding: 30px;
+    text-align: center;
+    background-color: #fffdf5; 
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-style: italic;
+    margin-bottom: 30px;
+} */
+
+/* LISTA DE SALONES */
+/* section ol {
+>>>>>>> 4761bd024a0156d48ec64aa5a2ed7dec0ec0dcca
     list-style: none;
     padding: 0;
     margin: 0;
@@ -60,6 +118,7 @@ nav a:hover {
     color: white;
 }
 
+<<<<<<< HEAD
 #catalogo-salones {
     display: flex;
     flex-wrap: wrap;
@@ -166,8 +225,15 @@ nav a:hover {
     box-sizing: border-box;
     max-width: 300px;
 }
+=======
+section ol li img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}  */
+>>>>>>> 4761bd024a0156d48ec64aa5a2ed7dec0ec0dcca
 
-.footer-container {
+/*.footer-container {
     background-color: #ffbc9a;
     padding: 20px;
     display: flex;
@@ -232,9 +298,13 @@ nav a:hover {
     font-size: 14px;
     color: #000000;
     background-color: #ffbc9a;
+<<<<<<< HEAD
 }
 
 article:first-of-type {
     margin-top: 2rem;
 }
 */
+=======
+}*/
+>>>>>>> 4761bd024a0156d48ec64aa5a2ed7dec0ec0dcca
