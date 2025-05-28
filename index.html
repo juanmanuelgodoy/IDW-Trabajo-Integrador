@@ -184,20 +184,13 @@
                 const salonId = this.getAttribute('data-salon-id');
                 const precio = this.getAttribute('data-precio');
 
-                // Mostrar mensaje en el modal
                 document.getElementById('reservaModalBody').innerText =
                     `¡Felicitaciones! Has reservado el salón "${salonId}" por $${precio}`;
                 const reservaModal = new bootstrap.Modal(document.getElementById('reservaModal'));
                 reservaModal.show();
-
-                // Cambiar texto del botón
                 boton.textContent = 'Reservado';
-
-                // Cambiar clases de estilo
                 boton.classList.remove('btn-outline-success');
                 boton.classList.add('btn-success');
-
-                // Deshabilitar el botón
                 boton.disabled = true;
             });
         });
