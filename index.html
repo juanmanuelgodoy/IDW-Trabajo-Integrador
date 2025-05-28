@@ -30,7 +30,7 @@
                             <a class="text-decoration-none" href="contacto.html">Contacto </a>
                         </li>
                         <li class="nav-item gap-2">
-                            <a class="text-decoration-none" href="dashboard.html">Administrador </a>
+                            <a class="text-decoration-none" href="login.html">Iniciar sesión</a>
                         </li>
                     </ul>
                 </div>
@@ -59,8 +59,8 @@
 
                     <!-- BOTÓN PARA RESERVAR EL SALON PREMIUM -->
                     <div class="card-footer bg-transparent border-0">
-                        <button class="btn btn-outline-success w-100 border-2 reservar-btn" data-salon-id="premium"
-                            data-precio="200000">
+                        <button class="btn btn-outline-success w-100 border-2 reservar-btn" data-salon-id="Premium"
+                            data-precio="200.000,00">
                             Reservar
                         </button>
                     </div>
@@ -79,8 +79,8 @@
                     </div>
                     <!-- BOTÓN PARA RESERVAR EL SALON  ESTANDAR-->
                     <div class="card-footer bg-transparent border-0">
-                        <button class="btn btn-outline-success w-100 border-2 reservar-btn" data-salon-id="estandar"
-                            data-precio="180000">
+                        <button class="btn btn-outline-success w-100 border-2 reservar-btn" data-salon-id="Estándar"
+                            data-precio="180.000,00">
                             Reservar
                         </button>
                     </div>
@@ -99,14 +99,30 @@
                     </div>
                     <!-- BOTON PARA RESERVAR EL SALON BASICO -->
                     <div class="card-footer bg-transparent border-0">
-                        <button class="btn btn-outline-success w-100 border-2 reservar-btn" data-salon-id="basico"
-                            data-precio="150000">
+                        <button class="btn btn-outline-success w-100 border-2 reservar-btn" data-salon-id="Básico"
+                            data-precio="150.000,00">
                             Reservar
                         </button>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="reservaModal" tabindex="-1" aria-labelledby="reservaModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="reservaModalLabel">Confirmación de Reserva</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body" id="reservaModalBody">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <hr />
@@ -160,26 +176,25 @@
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const botonesReservar = document.querySelectorAll('.reservar-btn');
+    document.addEventListener('DOMContentLoaded', function () {
+        const botonesReservar = document.querySelectorAll('.reservar-btn');
 
-    botonesReservar.forEach(boton => {
-        boton.addEventListener('click', function () {
-            // Cartel de aviso cuando se reserva el salón 
-            alert('¡Salón reservado correctamente!');
+        botonesReservar.forEach(function (boton) {
+            boton.addEventListener('click', function () {
+                const salonId = this.getAttribute('data-salon-id');
+                const precio = this.getAttribute('data-precio');
 
-            // El texto del boton Reservar cambia a Reservado cuando se reserva el salon
-            boton.textContent = 'Reservado';
-
-            // El estilo del boton cambia al pasar el mouse por encima quedando en verde para la accion reservar
-            boton.classList.remove('btn-outline-success');
-            boton.classList.add('btn-success');
-
-            // El boton esta desabilitado para reservar cuando esta reservado el salon (opcional)
-            boton.disabled = true;
+                document.getElementById('reservaModalBody').innerText =
+                    ¡Felicitaciones! Has reservado el salón "${salonId}" por $${precio};
+                const reservaModal = new bootstrap.Modal(document.getElementById('reservaModal'));
+                reservaModal.show();
+                boton.textContent = 'Reservado';
+                boton.classList.remove('btn-outline-success');
+                boton.classList.add('btn-success');
+                boton.disabled = true;
+            });
         });
     });
-});
 </script>
 </body>
 
