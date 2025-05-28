@@ -47,7 +47,7 @@
         <div class="row g-4">
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 shadow-sm bg-success bg-opacity-10">
-                    <img src="img/Inicio_salon_basico_1.png" class="card-img-top img-fluid rounded-top"
+                    <img src="img/Salon_premium_pileta.png" class="card-img-top img-fluid rounded-top"
                         alt="Salón Premium con pileta" style="height: 200px; object-fit: cover;">
 
                     <div class="card-body">
@@ -57,7 +57,7 @@
                         <p class="mb-0">Incluye pileta, juegos temáticos y animación.</p>
                     </div>
 
-                    <!-- BOTÓN DE RESERVA (para JS) -->
+                    <!-- BOTÓN PARA RESERVAR EL SALON PREMIUM -->
                     <div class="card-footer bg-transparent border-0">
                         <button class="btn btn-outline-success w-100 border-2 reservar-btn" data-salon-id="premium"
                             data-precio="200000">
@@ -77,7 +77,7 @@
                         <p class="mb-1"><strong>Precio:</strong> $180.000</p>
                         <p class="mb-0">Cancha de fútbol y juegos al aire libre.</p>
                     </div>
-                    <!-- BOTÓN DE RESERVA -->
+                    <!-- BOTÓN PARA RESERVAR EL SALON  ESTANDAR-->
                     <div class="card-footer bg-transparent border-0">
                         <button class="btn btn-outline-success w-100 border-2 reservar-btn" data-salon-id="estandar"
                             data-precio="180000">
@@ -89,7 +89,7 @@
 
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 shadow-sm bg-success bg-opacity-10">
-                    <img src="img/Inicio_salon_premium_1.png" class="card-img-top img-fluid rounded-top"
+                    <img src="img/Salon_basico_interno.png" class="card-img-top img-fluid rounded-top"
                         alt="Salón Básico" style="height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <h3 class="h5">Salón Básico</h3>
@@ -97,7 +97,7 @@
                         <p class="mb-1"><strong>Precio:</strong> $150.000</p>
                         <p class="mb-0">Espacio luminoso para celebraciones sencillas.</p>
                     </div>
-                    <!-- BOTÓN DE RESERVA -->
+                    <!-- BOTON PARA RESERVAR EL SALON BASICO -->
                     <div class="card-footer bg-transparent border-0">
                         <button class="btn btn-outline-success w-100 border-2 reservar-btn" data-salon-id="basico"
                             data-precio="150000">
@@ -159,6 +159,28 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const botonesReservar = document.querySelectorAll('.reservar-btn');
+
+    botonesReservar.forEach(boton => {
+        boton.addEventListener('click', function () {
+            // Cartel de aviso cuando se reserva el salón 
+            alert('¡Salón reservado correctamente!');
+
+            // El texto del boton Reservar cambia a Reservado cuando se reserva el salon
+            boton.textContent = 'Reservado';
+
+            // El estilo del boton cambia al pasar el mouse por encima quedando en verde para la accion reservar
+            boton.classList.remove('btn-outline-success');
+            boton.classList.add('btn-success');
+
+            // El boton esta desabilitado para reservar cuando esta reservado el salon (opcional)
+            boton.disabled = true;
+        });
+    });
+});
+</script>
 </body>
 
 </html>
