@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
     <title>IDW S.A.</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
@@ -58,23 +57,31 @@
                         <div class="modal-body">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-nombre">Nombre</span>
-                                <input type="text" class="form-control" aria-label="Nombre del salón"
+                                <input type="text" class="form-control" id="nombreSalon"
                                     aria-describedby="inputGroup-sizing-nombre">
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-direccion">Dirección</span>
-                                <input type="text" class="form-control" aria-label="Dirección del salón"
+                                <input type="text" class="form-control" id="direccionSalon"
                                     aria-describedby="inputGroup-sizing-direccion">
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-descripcion">Descripción</span>
-                                <input type="text" class="form-control" aria-label="Descripción del salón"
+                                <input type="text" class="form-control" id="descripcionSalon"
                                     aria-describedby="inputGroup-sizing-descripcion">
+                            </div>
+                            <div class="input-group mb-3">
+                                <label class="form-label">Precio</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input id="precioSalon" type="text" class="form-control">
+                                    <span class="input-group-text">.00</span>
+                                </div>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-primary">Guardar</button>
+                            <button type="button" class="btn btn-primary" id="btnGuardarSalon">Guardar</button>
                         </div>
                     </div>
                 </div>
@@ -88,52 +95,11 @@
                             <th scope="col">Nombre</th>
                             <th scope="col">Dirección</th>
                             <th scope="col">Descripción</th>
+                            <th scope="col">Precio</th>
                             <th scope="col">Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Salón Premium</td>
-                            <td>Rivadavia 245 - CABA</td>
-                            <td>Salón para los más peques!. Un espacio exclusivo, totalmente equipado y lleno de color
-                                para los más peques. Ideal para cumpleaños inolvidables, con juegos, seguridad y
-                                atención
-                                personalizada. ¡Viví una fiesta mágica que todos recordarán!</td>
-                            <td
-                                class="d-flex flex-column flex-sm-row gap-2 h-100 align-items-center justify-content-center">
-                                <button class="btn btn-sm btn-primary btn-lg">Editar</button>
-                                <button class="btn btn-sm btn-danger btn-lg">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Salón Estándar</td>
-                            <td>Los Naranjos 678 - CABA</td>
-                            <td>Perfecto para quienes buscan aire libre, fútbol y mucha diversión. Un salón amplio y
-                                versátil donde los chicos corren, juegan y disfrutan a pleno. ¡Una opción encantadora
-                                para
-                                festejar sin límites! Te estamos esperando para jugar un picadito</td>
-                            <td
-                                class="d-flex flex-column flex-sm-row gap-2 h-100 align-items-center justify-content-center">
-                                <button class="btn btn-sm btn-primary btn-lg">Editar</button>
-                                <button class="btn btn-sm btn-danger btn-lg">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Salón Básico</td>
-                            <td>El Parque 798 - CABA</td>
-                            <td>Una propuesta práctica, luminosa y funcional para encuentros con amigos. Tiene todo lo
-                                necesario para celebrar de forma sencilla y alegre. ¡Ideal para los que quieren festejar
-                                sin
-                                complicaciones!</td>
-                            <td
-                                class="d-flex flex-column flex-sm-row gap-2 h-100 align-items-center justify-content-center">
-                                <button class="btn btn-sm btn-primary btn-lg">Editar</button>
-                                <button class="btn btn-sm btn-danger btn-lg">Eliminar</button>
-                            </td>
-                        </tr>
+                    <tbody id="tablaSalonesBody">
                     </tbody>
                 </table>
             </div>
@@ -160,23 +126,23 @@
                         <div class="modal-body">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-nombre">Nombre</span>
-                                <input type="text" class="form-control" aria-label="Nombre del servicio"
+                                <input type="text" class="form-control" id="nombreServicio"
                                     aria-describedby="inputGroup-sizing-nombre">
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">$</span>
-                                <input type="text" class="form-control" aria-label="Precio del servicio (en pesos)">
+                                <input type="text" class="form-control" id="precioServicio">
                                 <span class="input-group-text">.00</span>
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-descripcion">Descripción</span>
-                                <input type="text" class="form-control" aria-label="Descripción del servicio"
+                                <input type="text" class="form-control" id="descripcionServicio"
                                     aria-describedby="inputGroup-sizing-descripcion">
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-primary">Guardar</button>
+                            <button type="button" class="btn btn-primary" id="btnGuardarServicio">Guardar</button>
                         </div>
                     </div>
                 </div>
@@ -193,42 +159,7 @@
                             <th scope="col">Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Juegos acuáticos</td>
-                            <td>$150.000,00</td>
-                            <td>Con la coordinación de un personal experimentado que colabora en
-                                todo lo necesario para proteger a los niños.</td>
-                            <td
-                                class="d-flex flex-column flex-sm-row gap-2 h-100 align-items-center justify-content-center">
-                                <button class="btn btn-sm btn-primary btn-lg">Editar</button>
-                                <button class="btn btn-sm btn-danger btn-lg">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Juegos didácticos</td>
-                            <td>$80.000,00</td>
-                            <td>Para ampliar la imaginación y creatividad entre sus amigos.</td>
-                            <td
-                                class="d-flex flex-column flex-sm-row gap-2 h-100 align-items-center justify-content-center">
-                                <button class="btn btn-sm btn-primary btn-lg">Editar</button>
-                                <button class="btn btn-sm btn-danger btn-lg">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Animación</td>
-                            <td>$50.000,00</td>
-                            <td>Contamos con personal que actúa de un personaje de la farándula tocando
-                                melodías infantiles en vivo y proponiendo diferentes juegos.</td>
-                            <td
-                                class="d-flex flex-column flex-sm-row gap-2 h-100 align-items-center justify-content-center">
-                                <button class="btn btn-sm btn-primary btn-lg">Editar</button>
-                                <button class="btn btn-sm btn-danger btn-lg">Eliminar</button>
-                            </td>
-                        </tr>
+                    <tbody id="tablaServiciosBody">
                     </tbody>
                 </table>
             </div>
@@ -244,7 +175,7 @@
             <!-- Modal -->
             <div class="modal fade" id="nuevoImagenModal" tabindex="-1" aria-labelledby="nuevoImagenLabel"
                 aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="nuevoImagenLabel">Crear nueva imagen</h5>
@@ -254,27 +185,29 @@
                         <div class="modal-body">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-nombreImagen">Nombre</span>
-                                <input type="text" class="form-control" aria-label="Nombre de la imagen"
-                                    aria-describedby="inputGroup-sizing-nombreImagen">
-                            </div>
-                            <div class="input-group mb-3">
-                                <input type="file" class="form-control" id="inputGroupFile02">
-                                <label class="input-group-text" for="inputGroupFile02">Subir</label>
+                                <input id="nombreImagen" type="text" class="form-control"
+                                    aria-label="Nombre de la imagen" aria-describedby="inputGroup-sizing-nombreImagen">
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text"
                                     id="inputGroup-sizing-descripcionImagen">Descripción</span>
-                                <input type="text" class="form-control" aria-label="Descripción de la imagen"
+                                <input id="descripcionImagen" type="text" class="form-control"
+                                    aria-label="Descripción de la imagen"
                                     aria-describedby="inputGroup-sizing-descripcionImagen">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Seleccionar imagen</label>
+                                <div id="galeriaImagenes" class="d-flex flex-wrap gap-3"></div>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-primary">Guardar</button>
+                            <button type="button" class="btn btn-primary" onclick="guardarImagen()">Guardar</button>
                         </div>
                     </div>
                 </div>
             </div>
+
             <!-- Tabla de imágenes -->
             <div class="table-responsive">
                 <table class="table table-hover align-middle">
@@ -288,50 +221,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Salón Premium</td>
-                            <td><img src="img/Inicio_salon_basico_1.png" alt="salon1" class="img-fluid"
-                                    style="max-width: 150px;"></td>
-                            <td>Sala de juegos interna. Salón de comida. Sala de living para adultos. Baños internos y
-                                externos.
-                                Patio de 300 m2: Incluye pileta apto para niños de 2 hasta 9 años; cancha de fútbol y
-                                juegos. Duración de 4 horas.
-                            </td>
-                            <td class="d-flex flex-column flex-sm-row gap-2 align-items-center justify-content-center">
-                                <button class="btn btn-sm btn-primary">Editar</button>
-                                <button class="btn btn-sm btn-danger">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Salón Estándar</td>
-                            <td><img src="img/Inicio_salon_estandar_1.png" alt="salon2" class="img-fluid"
-                                    style="max-width: 150px;"></td>
-                            <td>Sala de juegos interna. Salón de comida. Sala de living para adultos. Baños internos y
-                                externos.
-                                Patio de 250 m2: Incluye cancha de fútbol. Duración de 4 horas.
-                            </td>
-                            <td class="d-flex flex-column flex-sm-row gap-2 align-items-center justify-content-center">
-                                <button class="btn btn-sm btn-primary">Editar</button>
-                                <button class="btn btn-sm btn-danger">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Salón Básico</td>
-                            <td><img src="img/Inicio_salon_premium_1.png" alt="salon3" class="img-fluid"
-                                    style="max-width: 150px;"></td>
-                            <td>Sala de juegos interna. Salón de comida. Sala de living para adultos. Baños. 400 m2 de
-                                Salón
-                                Cubierto.
-                                Duración de 4 horas.
-                            </td>
-                            <td class="d-flex flex-column flex-sm-row gap-2 align-items-center justify-content-center">
-                                <button class="btn btn-sm btn-primary">Editar</button>
-                                <button class="btn btn-sm btn-danger">Eliminar</button>
-                            </td>
-                        </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -371,7 +261,8 @@
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label class="form-label">Email</label>
-                                    <input id="emailPresu" type="email" class="form-control" placeholder="usuario@correo.com">
+                                    <input id="emailPresu" type="email" class="form-control"
+                                        placeholder="usuario@correo.com">
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label class="form-label">Opciones de salón</label>
@@ -394,7 +285,8 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-primary">Guardar</button>
+                            <button type="button" class="btn btn-primary" id="btnGuardarPresupuesto">Guardar</button>
+
                         </div>
                     </div>
                 </div>
@@ -412,70 +304,11 @@
                             <th scope="col">Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Perez, Juan Carlos</td>
-                            <td>011-155345678</td>
-                            <td>juancarlosperez@gmail.com</td>
-                            <td>Salón Premium</td>
-                            <td>$200.000,00</td>
-                            <td class="flex-wrap: wrap; gap-2 align-items-center justify-content-center">
-                                <button class="btn btn-sm btn-primary">Editar</button>
-                                <button class="btn btn-sm btn-danger">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>2</th>
-                            <td>Martinez, Luis Emanuel</td>
-                            <td>011-155901234</td>
-                            <td>martinezluisemanuel@gmail.com</td>
-                            <td>Salón Premium</td>
-                            <td>$200.000,00</td>
-                            <td class="flex-wrap: wrap; gap-2 justify-content-center align-items-center">
-                                <button class="btn btn-sm btn-primary">Editar</button>
-                                <button class="btn btn-sm btn-danger">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>3</th>
-                            <td>Sanchez, Esteban Marcelo</td>
-                            <td>011-155567890</td>
-                            <td>sanchezestebanmarcelo@gmail.com</td>
-                            <td>Salón Básico</td>
-                            <td>$150.000,00</td>
-                            <td class="flex-wrap: wrap; gap-2 justify-content-center align-items-center">
-                                <button class="btn btn-sm btn-primary">Editar</button>
-                                <button class="btn btn-sm btn-danger">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>4</th>
-                            <td>Enrique, Cesar Antonio</td>
-                            <td>011-155123456</td>
-                            <td>enriquecesarantonio@gmail.com</td>
-                            <td>Salón Estándar</td>
-                            <td>$180.000,00</td>
-                            <td class="flex-wrap: wrap; gap-2 justify-content-center align-items-center">
-                                <button class="btn btn-sm btn-primary">Editar</button>
-                                <button class="btn btn-sm btn-danger">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>5</th>
-                            <td>Villa, Claudio Angel</td>
-                            <td>011-155789012</td>
-                            <td>villaclaudioangel@gmail.com</td>
-                            <td>Salón Estándar</td>
-                            <td>$180.000,00</td>
-                            <td class="flex-wrap: wrap; gap-2 justify-content-center align-items-center">
-                                <button class="btn btn-sm btn-primary">Editar</button>
-                                <button class="btn btn-sm btn-danger">Eliminar</button>
-                            </td>
-                        </tr>
+                    <tbody id="tablaPresupuestosBody">
                     </tbody>
                 </table>
             </div>
+
         </section>
     </main>
     <hr />
@@ -529,279 +362,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
-    
-    <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const inputNombre = document.querySelector('#nuevoSalonModal input[aria-label="Nombre del salón"]');
-    const inputDireccion = document.querySelector('#nuevoSalonModal input[aria-label="Dirección del salón"]');
-    const inputDescripcion = document.querySelector('#nuevoSalonModal input[aria-label="Descripción del salón"]');
-    const botonGuardar = document.querySelector('#nuevoSalonModal .btn-primary');
-    const tablaBody = document.querySelector('section .table tbody');
-    const modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('nuevoSalonModal'));
 
-    let salones = JSON.parse(localStorage.getItem('salones')) || [];
+    <script src="../js/salon.js"></script>
+    <script src="../js/servicio.js"></script>
+    <script src="../js/imagen.js"></script>
+    <script src="../js/presupuesto.js"></script>
 
-    function renderizarTabla() {
-        tablaBody.innerHTML = '';
-        salones.forEach((salon, index) => {
-            tablaBody.innerHTML += `
-                <tr>
-                    <th scope="row">${index + 1}</th>
-                    <td>${salon.nombre}</td>
-                    <td>${salon.direccion}</td>
-                    <td>${salon.descripcion}</td>
-                    <td class="d-flex flex-column flex-sm-row gap-2 justify-content-center align-items-center">
-                        <button class="btn btn-sm btn-primary" disabled>Editar</button>
-                        <button class="btn btn-sm btn-danger" disabled>Eliminar</button>
-                    </td>
-                </tr>
-            `;
-        });
-    }
-
-    function guardarSalon() {
-        const nombre = inputNombre.value.trim();
-        const direccion = inputDireccion.value.trim();
-        const descripcion = inputDescripcion.value.trim();
-
-        if (!nombre || !direccion || !descripcion) {
-            alert('Todos los campos son obligatorios.');
-            return;
-        }
-
-        const nuevoSalon = { nombre, direccion, descripcion };
-        salones.push(nuevoSalon);
-        localStorage.setItem('salones', JSON.stringify(salones));
-        renderizarTabla();
-
-        // Cartel aviso de la accion que se realizó
-        alert('¡Muy bien! ¡Salón guardado correctamente!');
-
-        // Limpia campo / modal
-        inputNombre.value = '';
-        inputDireccion.value = '';
-        inputDescripcion.value = '';
-        modal.hide();
-    }
-
-    botonGuardar.addEventListener('click', guardarSalon);
-    renderizarTabla();
-});
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const nombreServicio = document.querySelector('#nuevoServicioModal input[aria-label="Nombre del servicio"]');
-    const precioServicio = document.querySelector('#nuevoServicioModal input[aria-label="Precio del servicio (en pesos)"]');
-    const descripcionServicio = document.querySelector('#nuevoServicioModal input[aria-label="Descripción del servicio"]');
-    const botonGuardar = document.querySelector('#nuevoServicioModal .btn-primary');
-    const tablaBody = document.querySelector('#nuevoServicioModal').closest('section').querySelector('table tbody');
-    const modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('nuevoServicioModal'));
-
-    let servicios = JSON.parse(localStorage.getItem('servicios')) || [];
-
-    function formatearPrecio(valor) {
-        return new Intl.NumberFormat('es-AR', {
-            style: 'currency',
-            currency: 'ARS',
-            minimumFractionDigits: 2
-        }).format(valor);
-    }
-
-    function renderizarServicios() {
-        tablaBody.innerHTML = '';
-        servicios.forEach((serv, index) => {
-            tablaBody.innerHTML += `
-                <tr>
-                    <th scope="row">${index + 1}</th>
-                    <td>${serv.nombre}</td>
-                    <td>${formatearPrecio(serv.precio)}</td>
-                    <td>${serv.descripcion}</td>
-                    <td class="d-flex flex-column flex-sm-row gap-2 align-items-center justify-content-center">
-                        <button class="btn btn-sm btn-primary" disabled>Editar</button>
-                        <button class="btn btn-sm btn-danger" disabled>Eliminar</button>
-                    </td>
-                </tr>`;
-        });
-    }
-
-    function guardarServicio() {
-        const nombre = nombreServicio.value.trim();
-        const precioInput = precioServicio.value.trim().replace('.', '').replace(',', '.'); // limpia el formato
-        const descripcion = descripcionServicio.value.trim();
-        const precio = parseFloat(precioInput);
-
-        if (!nombre || isNaN(precio) || !descripcion) {
-            alert('Todos los campos son obligatorios y el precio debe ser un número.');
-            return;
-        }
-
-        servicios.push({ nombre, precio, descripcion });
-        localStorage.setItem('servicios', JSON.stringify(servicios));
-        renderizarServicios();
-
-        alert('¡Muy bien! Servicio guardado correctamente!');
-
-        nombreServicio.value = '';
-        precioServicio.value = '';
-        descripcionServicio.value = '';
-        modal.hide();
-    }
-
-    botonGuardar.addEventListener('click', guardarServicio);
-    renderizarServicios();
-});
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const nombreImagen = document.querySelector('#nuevoImagenModal input[aria-label="Nombre de la imagen"]');
-    const archivoImagen = document.querySelector('#nuevoImagenModal input[type="file"]');
-    const descripcionImagen = document.querySelector('#nuevoImagenModal input[aria-label="Descripción de la imagen"]');
-    const botonGuardar = document.querySelector('#nuevoImagenModal .btn-primary');
-    const tablaBody = document.querySelector('#nuevoImagenModal').closest('section').querySelector('table tbody');
-    const modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('nuevoImagenModal'));
-
-    let imagenes = JSON.parse(localStorage.getItem('imagenes')) || [];
-
-    // Precargar dos imágenes solo si localStorage está vacío
-    if (imagenes.length === 0) {
-        imagenes.push(
-            {
-                nombre: 'Salón Estándar',
-                descripcion: 'Sala de juegos interna. Salón de comida. Sala de living para adultos. Baños internos y externos. Patio de 250 m2: Incluye cancha de fútbol. Duración de 4 horas.',
-                url: 'img/inicio_salon_estandar_1.png'
-            },
-            {
-                nombre: 'Salón Básico',
-                descripcion: 'Sala de juegos interna. Salón de comida. Sala de living para adultos. Baños. 400 m2 de salón cubierto. Duración de 4 horas.',
-                url: 'img/inicio_salon_basico_1.png'
-            }
-        );
-        localStorage.setItem('imagenes', JSON.stringify(imagenes));
-    }
-
-    function renderizarImagenes() {
-        tablaBody.innerHTML = '';
-        imagenes.forEach((img, index) => {
-            tablaBody.innerHTML += `
-                <tr>
-                    <th scope="row">${index + 1}</th>
-                    <td>${img.nombre}</td>
-                    <td><img src="${img.url}" alt="imagen" style="max-width: 150px;" class="img-fluid"></td>
-                    <td>${img.descripcion}</td>
-                    <td class="d-flex flex-column flex-sm-row gap-2 align-items-center justify-content-center">
-                        <button class="btn btn-sm btn-primary" disabled>Editar</button>
-                        <button class="btn btn-sm btn-danger" disabled>Eliminar</button>
-                    </td>
-                </tr>`;
-        });
-    }
-
-    function guardarImagen() {
-        const nombre = nombreImagen.value.trim();
-        const descripcion = descripcionImagen.value.trim();
-        const archivo = archivoImagen.files[0];
-
-        if (!nombre || !descripcion || !archivo) {
-            alert('Todos los campos son obligatorios.');
-            return;
-        }
-
-        imagenes.push({
-            nombre,
-            descripcion,
-            url: 'img/' + archivo.name
-        });
-
-        localStorage.setItem('imagenes', JSON.stringify(imagenes));
-        renderizarImagenes();
-
-        alert('¡Muy bien! Imagen guardada correctamente!');
-        nombreImagen.value = '';
-        descripcionImagen.value = '';
-        archivoImagen.value = '';
-        modal.hide();
-    }
-
-    botonGuardar.addEventListener('click', guardarImagen);
-    renderizarImagenes();
-});
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('nuevoPresupuestoModal'));
-    const botonGuardar = document.querySelector('#nuevoPresupuestoModal .btn-primary');
-
-    // Conectamos a los campos por su id
-    const apellido = document.getElementById('apellidoPresu');
-    const nombre = document.getElementById('nombrePresu');
-    const telefono = document.getElementById('telefonoPresu');
-    const email = document.getElementById('emailPresu');
-    const salon = document.getElementById('salonPresu');
-    const precio = document.getElementById('precioPresu');
-
-    const tablaBody = document.querySelector('section:last-of-type table tbody');
-
-    let presupuestos = JSON.parse(localStorage.getItem('presupuestos')) || [];
-
-    function renderizarPresupuestos() {
-        tablaBody.innerHTML = '';
-        presupuestos.forEach((presu, index) => {
-            tablaBody.innerHTML += `
-                <tr>
-                    <th scope="row">${index + 1}</th>
-                    <td>${presu.apellido}, ${presu.nombre}</td>
-                    <td>${presu.telefono}</td>
-                    <td>${presu.email}</td>
-                    <td>${presu.salon}</td>
-                    <td>$${new Intl.NumberFormat('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(presu.precio)}</td>
-                    <td class="d-flex flex-column flex-sm-row gap-2 align-items-center justify-content-center">
-                        <button class="btn btn-sm btn-primary" disabled>Editar</button>
-                        <button class="btn btn-sm btn-danger" disabled>Eliminar</button>
-                    </td>
-                </tr>`;
-        });
-    }
-
-    function guardarPresupuesto() {
-        if (
-            !apellido.value.trim() ||
-            !nombre.value.trim() ||
-            !telefono.value.trim() ||
-            !email.value.trim() ||
-            salon.value === "Elegir..." ||
-            !precio.value.trim()
-        ) {
-            alert('Todos los campos son obligatorios.');
-            return;
-        }
-
-        presupuestos.push({
-            apellido: apellido.value.trim(),
-            nombre: nombre.value.trim(),
-            telefono: telefono.value.trim(),
-            email: email.value.trim(),
-            salon: salon.options[salon.selectedIndex].text,
-            precio: parseFloat(precio.value.replace('.', '').replace(',', '.').trim())
-        });
-
-        localStorage.setItem('presupuestos', JSON.stringify(presupuestos));
-        renderizarPresupuestos();
-
-        alert('¡Muy bien! Presupuesto guardado correctamente!');
-
-        apellido.value = '';
-        nombre.value = '';
-        telefono.value = '';
-        email.value = '';
-        salon.selectedIndex = 0;
-        precio.value = '';
-        modal.hide();
-    }
-
-    botonGuardar.addEventListener('click', guardarPresupuesto);
-    renderizarPresupuestos();
-});
-</script>
 </body>
 
 </html>
