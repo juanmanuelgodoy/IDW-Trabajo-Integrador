@@ -30,7 +30,7 @@
                             <a class="text-decoration-none" href="contacto.html">Contacto </a>
                         </li>
                         <li class="nav-item gap-2">
-                            <a class="text-decoration-none" href="login.html">Iniciar sesión</a>
+                            <a class="text-decoration-none fw-bold text-primary" href="login.html">Iniciar sesión</a>
                         </li>
                     </ul>
                 </div>
@@ -43,70 +43,7 @@
             <h2 class="mb-3">Bienvenido a nuestro Sitio</h2>
             <p class="lead">Te mostramos nuestros espacios acorde a tus necesidades</p>
         </section>
-
-        <div class="row g-4">
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm bg-success bg-opacity-10">
-                    <img src="img/Salon_premium_pileta.png" class="card-img-top img-fluid rounded-top"
-                        alt="Salón Premium con pileta" style="height: 200px; object-fit: cover;">
-
-                    <div class="card-body">
-                        <h3 class="h5">Salón Premium</h3>
-                        <p class="text-muted mb-2">Rivadavia 245 - CABA</p>
-                        <p class="mb-1"><strong>Precio:</strong> $200.000</p>
-                        <p class="mb-0">Incluye pileta, juegos temáticos y animación.</p>
-                    </div>
-
-                    <!-- BOTÓN PARA RESERVAR EL SALON PREMIUM -->
-                    <div class="card-footer bg-transparent border-0">
-                        <button class="btn btn-outline-success w-100 border-2 reservar-btn" data-salon-id="Premium"
-                            data-precio="200.000,00">
-                            Reservar
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm bg-success bg-opacity-10">
-                    <img src="img/Inicio_salon_estandar_1.png" class="card-img-top img-fluid rounded-top"
-                        alt="Salón Estándar con cancha de fútbol" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h3 class="h5">Salón Estándar</h3>
-                        <p class="text-muted mb-2">Los Naranjos 678 - CABA</p>
-                        <p class="mb-1"><strong>Precio:</strong> $180.000</p>
-                        <p class="mb-0">Cancha de fútbol y juegos al aire libre.</p>
-                    </div>
-                    <!-- BOTÓN PARA RESERVAR EL SALON  ESTANDAR-->
-                    <div class="card-footer bg-transparent border-0">
-                        <button class="btn btn-outline-success w-100 border-2 reservar-btn" data-salon-id="Estándar"
-                            data-precio="180.000,00">
-                            Reservar
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm bg-success bg-opacity-10">
-                    <img src="img/Salon_basico_interno.png" class="card-img-top img-fluid rounded-top"
-                        alt="Salón Básico" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h3 class="h5">Salón Básico</h3>
-                        <p class="text-muted mb-2">El Parque 798 - CABA</p>
-                        <p class="mb-1"><strong>Precio:</strong> $150.000</p>
-                        <p class="mb-0">Espacio luminoso para celebraciones sencillas.</p>
-                    </div>
-                    <!-- BOTON PARA RESERVAR EL SALON BASICO -->
-                    <div class="card-footer bg-transparent border-0">
-                        <button class="btn btn-outline-success w-100 border-2 reservar-btn" data-salon-id="Básico"
-                            data-precio="150.000,00">
-                            Reservar
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="row g-4" id="contenedor-salones"></div>
         <div class="modal fade" id="reservaModal" tabindex="-1" aria-labelledby="reservaModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -124,6 +61,21 @@
         </div>
 
     </main>
+
+    <div class="modal fade" id="reservaModal" tabindex="-1" aria-labelledby="reservaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reservaModalLabel">Reserva confirmada</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body" id="reservaModalBody"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <hr />
     <footer class="bg-warning text-dark py-1">
@@ -175,26 +127,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const botonesReservar = document.querySelectorAll('.reservar-btn');
 
-        botonesReservar.forEach(function (boton) {
-            boton.addEventListener('click', function () {
-                const salonId = this.getAttribute('data-salon-id');
-                const precio = this.getAttribute('data-precio');
-                document.getElementById('reservaModalBody').innerText = 
-                 '¡Felicitaciones! Has reservado el salón "${salonId}" por $${precio}';
-                const reservaModal = new bootstrap.Modal(document.getElementById('reservaModal'));
-                reservaModal.show();
-                boton.textContent = 'Reservado';
-                boton.classList.remove('btn-outline-success');
-                boton.classList.add('btn-success');
-                boton.disabled = true;
-            });
-        });
-    });
-</script>
+    <script src="../js/index.js"></script>
 </body>
 
 </html>
