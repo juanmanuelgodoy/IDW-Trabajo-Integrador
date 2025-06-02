@@ -24,19 +24,19 @@ document.addEventListener('DOMContentLoaded', function () {
             <td><img src="${img.url}" alt="imagen" style="max-width: 150px;" class="img-fluid"></td>
             <td>${img.descripcion}</td>
             <td class="d-flex flex-column flex-sm-row gap-2 align-items-center justify-content-center">
-                <button class="btn btn-sm btn-primary editar-btn" data-index="${index}">Editar</button>
-                <button class="btn btn-sm btn-danger eliminar-btn" data-index="${index}">Eliminar</button>
+                <button class="btn btn-sm btn-primary editarImagen-btn" data-index="${index}">Editar</button>
+                <button class="btn btn-sm btn-danger eliminarImagen-btn" data-index="${index}">Eliminar</button>
             </td>
         `;
             tablaBody.appendChild(fila);
         });
 
-        document.querySelectorAll('.editar-btn').forEach(btn =>
+        document.querySelectorAll('.editarImagen-btn').forEach(btn =>
             btn.addEventListener('click', editarImagen)
         );
 
-        document.querySelectorAll('.eliminar-btn').forEach(btn =>
-            btn.addEventListener('click', eliminarImagen)
+        document.querySelectorAll('.eliminarImagen-btn').forEach(btn =>
+            btn.addEventListener('click', eliminarImagenDeTabla)
         );
     }
 
@@ -70,19 +70,22 @@ document.addEventListener('DOMContentLoaded', function () {
         renderizarImagenes();
         limpiarFormularioImagen();
         bootstrap.Modal.getInstance(document.getElementById('nuevoImagenModal')).hide();
+        document.getElementById('btnGuardarImagen').textContent = 'Guardar';
+        modoEdicionImagen = false;
+        indexEdicionImagen = null;
     }
 
     botonGuardar.addEventListener('click', guardarImagen);
     renderizarImagenes();
 
-    function eliminarImagen(event) {
-    const index = parseInt(event.target.getAttribute('data-index'));
-    if (confirm('¿Estás seguro de que deseas eliminar esta imagen?')) {
-        imagenes.splice(index, 1);
-        localStorage.setItem('imagenes', JSON.stringify(imagenes));
-        renderizarImagenes();
+    function eliminarImagenDeTabla(event) {
+        const index = parseInt(event.target.getAttribute('data-index'));
+        if (confirm('¿Estás seguro de que deseas eliminar esta imagen?')) {
+            imagenes.splice(index, 1);
+            localStorage.setItem('imagenes', JSON.stringify(imagenes));
+            renderizarImagenes();
+        }
     }
-}
 });
 
 function cargarGaleriaImagenes() {
@@ -126,23 +129,16 @@ function editarImagen(event) {
     modoEdicionImagen = true;
     indexEdicionImagen = index;
 
-    // Marcar imagen seleccionada en galería (si existe)
     document.querySelectorAll('#galeriaImagenes img').forEach(i => {
         i.classList.toggle('border-primary', i.src.includes(img.url));
     });
+
+    document.getElementById('btnGuardarImagen').textContent = 'Actualizar';
 
     const modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('nuevoImagenModal'));
     modal.show();
 }
 
-function eliminarImagen(event) {
-    const index = parseInt(event.target.getAttribute('data-index'));
-    if (confirm('¿Estás seguro de que deseas eliminar esta imagen?')) {
-        imagenes.splice(index, 1);
-        localStorage.setItem('imagenes', JSON.stringify(imagenes));
-        renderizarImagenes();
-    }
-}
 
 function limpiarFormularioImagen() {
     document.getElementById('nombreImagen').value = '';

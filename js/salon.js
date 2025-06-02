@@ -32,16 +32,16 @@ function renderizarSalones() {
             <td>${salon.descripcion}</td>
             <td>$${new Intl.NumberFormat('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(salon.precio)}</td>
             <td>
-                <button class="btn btn-sm btn-primary editar-btn" data-index="${index}">Editar</button>
-                <button class="btn btn-sm btn-danger eliminar-btn" data-index="${index}">Eliminar</button>
+                <button class="btn btn-sm btn-primary editarSalon-btn" data-index="${index}">Editar</button>
+                <button class="btn btn-sm btn-danger eliminarSalon-btn" data-index="${index}">Eliminar</button>
             </td>
         `;
         tablaBody.appendChild(fila);
     });
 
-    document.querySelectorAll('.eliminar-btn').forEach(btn => btn.addEventListener('click', eliminarSalon));
+    document.querySelectorAll('.eliminarSalon-btn').forEach(btn => btn.addEventListener('click', eliminarSalon));
 
-    document.querySelectorAll('.editar-btn').forEach(btn => btn.addEventListener('click', editarSalon));
+    document.querySelectorAll('.editarSalon-btn').forEach(btn => btn.addEventListener('click', editarSalon));
 }
 
 function guardarSalon() {
