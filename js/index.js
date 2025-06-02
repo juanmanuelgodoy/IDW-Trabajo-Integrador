@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     contenedor.innerHTML = '';
 
     salones.forEach(salon => {
-        // Buscar imagen cuya propiedad `nombre` coincida (ignorando mayúsculas)
         const imagen = imagenes.find(img =>
             img.nombre?.toLowerCase() === salon.nombre?.toLowerCase()
         );
@@ -36,8 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
         `;
     });
-
-    // Eventos de botones
     document.querySelectorAll('.reservar-btn').forEach(btn => {
         btn.addEventListener('click', function () {
             const salonId = this.getAttribute('data-salon-id');
