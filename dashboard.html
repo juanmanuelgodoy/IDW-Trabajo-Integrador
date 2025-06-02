@@ -44,7 +44,6 @@
                     Nuevo Salón
                 </button>
             </div>
-            <!-- Modal -->
             <div class="modal fade" id="nuevoSalonModal" tabindex="-1" aria-labelledby="nuevoSalonLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
@@ -86,7 +85,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Tabla de salones -->
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>
@@ -113,7 +111,6 @@
                     Nuevo Servicio
                 </button>
             </div>
-            <!-- Modal -->
             <div class="modal fade" id="nuevoServicioModal" tabindex="-1" aria-labelledby="nuevoServicioLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
@@ -147,7 +144,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Tabla de servicios -->
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>
@@ -172,7 +168,6 @@
                     Nueva Imagen
                 </button>
             </div>
-            <!-- Modal -->
             <div class="modal fade" id="nuevoImagenModal" tabindex="-1" aria-labelledby="nuevoImagenLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-lg">
@@ -185,15 +180,15 @@
                         <div class="modal-body">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-nombreImagen">Nombre</span>
-                                <input id="nombreImagen" type="text" class="form-control"
-                                    id="Nombre de la imagen" aria-describedby="inputGroup-sizing-nombreImagen" required>
+                                <input id="nombreImagen" type="text" class="form-control" id="Nombre de la imagen"
+                                    aria-describedby="inputGroup-sizing-nombreImagen" required>
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text"
                                     id="inputGroup-sizing-descripcionImagen">Descripción</span>
                                 <input id="descripcionImagen" type="text" class="form-control"
-                                    id="Descripción de la imagen"
-                                    aria-describedby="inputGroup-sizing-descripcionImagen" required>
+                                    id="Descripción de la imagen" aria-describedby="inputGroup-sizing-descripcionImagen"
+                                    required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Seleccionar imagen</label>
@@ -207,8 +202,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Tabla de imágenes -->
             <div class="table-responsive">
                 <table class="table table-hover align-middle">
                     <thead>
@@ -235,7 +228,6 @@
                     Nuevo Presupuesto
                 </button>
             </div>
-            <!-- Modal -->
             <div class="modal fade" id="nuevoPresupuestoModal" tabindex="-1" aria-labelledby="nuevoPresupuestoLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-lg">
@@ -266,18 +258,15 @@
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label class="form-label">Opciones de salón</label>
-                                    <select id="salonPresu" class="form-select">
-                                        <option selected>Elegir...</option>
-                                        <option value="1">Salón Premium</option>
-                                        <option value="2">Salón Estándar</option>
-                                        <option value="3">Salón Básico</option>
+                                    <select id="salonPresu" class="form-select" required>
+                                        <option selected disabled>Elegir...</option>
                                     </select>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label class="form-label">Precio</label>
                                     <div class="input-group">
                                         <span class="input-group-text">$</span>
-                                        <input id="precioPresu" type="text" class="form-control" required>
+                                        <input id="precioPresu" type="text" class="form-control" readonly>
                                         <span class="input-group-text">.00</span>
                                     </div>
                                 </div>

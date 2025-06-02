@@ -5,6 +5,18 @@ let modoEdicionPresupuesto = false;
 let indexEdicionPresupuesto = null;
 let presupuestos = JSON.parse(localStorage.getItem('presupuestos')) || [];
 
+function cargarOpcionesSalones() {
+    const salones = JSON.parse(localStorage.getItem('salones')) || [];
+    salon.innerHTML = '<option selected disabled>Elegir...</option>';
+
+    salones.forEach((s, index) => {
+        const option = document.createElement('option');
+        option.value = index;
+        option.text = s.nombre;
+        salon.appendChild(option);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     modalPresupuesto = bootstrap.Modal.getOrCreateInstance(document.getElementById('nuevoPresupuestoModal'));
     botonGuardarPresupuesto = document.getElementById('btnGuardarPresupuesto');
@@ -17,9 +29,21 @@ document.addEventListener('DOMContentLoaded', function () {
     tablaBodyPresupuesto = document.querySelector('section:last-of-type table tbody');
 
     botonGuardarPresupuesto.addEventListener('click', guardarPresupuesto);
+    salon.addEventListener('change', actualizarPrecioSalon);
 
+    cargarOpcionesSalones();
     renderizarPresupuestos();
 });
+
+function actualizarPrecioSalon() {
+    const salones = JSON.parse(localStorage.getItem('salones')) || [];
+    const selected = salon.value;
+    if (salones[selected]) {
+        precioPresupuesto.value = salones[selected].precio;
+    } else {
+        precioPresupuesto.value = '';
+    }
+}
 
 function renderizarPresupuestos() {
     const tablaBodyPresupuesto = document.getElementById('tablaPresupuestosBody');
@@ -33,7 +57,7 @@ function renderizarPresupuestos() {
             <td>${presu.apellidoPresupuesto}, ${presu.nombrePresupuesto}</td>
             <td>${presu.telefono}</td>
             <td>${presu.email}</td>
-            <td>${presu.salon}</td>
+            <td>${presu.salon.nombre}</td>
             <td>$${new Intl.NumberFormat('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(presu.precioPresupuesto)}</td>
             <td>
                 <button class="btn btn-sm btn-primary editarPresupuesto-btn" data-index="${index}">Editar</button>
@@ -51,15 +75,23 @@ function renderizarPresupuestos() {
         btn.addEventListener('click', editarPresupuesto)
     );
 }
+
 function guardarPresupuesto() {
+    const salones = JSON.parse(localStorage.getItem('salones')) || [];
+    const selectedSalon = salones[salon.value];
+
+    if (!selectedSalon) {
+        alert('Debe seleccionar un salón válido.');
+        return;
+    }
 
     const datos = {
         apellidoPresupuesto: apellidoPresupuesto.value.trim(),
         nombrePresupuesto: nombrePresupuesto.value.trim(),
         telefono: telefono.value.trim(),
         email: email.value.trim(),
-        salon: salon.options[salon.selectedIndex].text,
-        precioPresupuesto: parseFloat(precioPresupuesto.value.replace('.', '').replace(',', '.').trim())
+        salon: selectedSalon,
+        precioPresupuesto: selectedSalon.precio
     };
 
     if (modoEdicionPresupuesto) {
@@ -77,7 +109,6 @@ function guardarPresupuesto() {
     modalPresupuesto.hide();
 }
 
-
 function editarPresupuesto(event) {
     const index = event.target.getAttribute('data-index');
     const presupuesto = presupuestos[index];
@@ -86,11 +117,12 @@ function editarPresupuesto(event) {
     nombrePresupuesto.value = presupuesto.nombrePresupuesto;
     telefono.value = presupuesto.telefono;
     email.value = presupuesto.email;
-    precioPresupuesto.value = presupuesto.precioPresupuesto.toString().replace('.', ',');
+    precioPresupuesto.value = presupuesto.precioPresupuesto;
 
-    for (let i = 0; i < salon.options.length; i++) {
-        if (salon.options[i].text === presupuesto.salon) {
-            salon.selectedIndex = i;
+    const salones = JSON.parse(localStorage.getItem('salones')) || [];
+    for (let i = 0; i < salones.length; i++) {
+        if (salones[i].nombre === presupuesto.salon.nombre) {
+            salon.value = i;
             break;
         }
     }
@@ -101,16 +133,17 @@ function editarPresupuesto(event) {
     modalPresupuesto.show();
 }
 
-
 function actualizarPresupuesto(index) {
+    const salones = JSON.parse(localStorage.getItem('salones')) || [];
+    const selectedSalon = salones[salon.value];
 
     presupuestos[index] = {
         apellidoPresupuesto: apellidoPresupuesto.value.trim(),
         nombrePresupuesto: nombrePresupuesto.value.trim(),
         telefono: telefono.value.trim(),
         email: email.value.trim(),
-        salon: salon.options[salon.selectedIndex].text,
-        precioPresupuesto: parseFloat(precioPresupuesto.value.replace('.', '').replace(',', '.').trim())
+        salon: selectedSalon,
+        precioPresupuesto: selectedSalon.precio
     };
 
     localStorage.setItem('presupuestos', JSON.stringify(presupuestos));
@@ -144,4 +177,3 @@ function limpiarFormulario() {
     indexEdicionPresupuesto = null;
     botonGuardarPresupuesto.textContent = 'Guardar';
 }
-
