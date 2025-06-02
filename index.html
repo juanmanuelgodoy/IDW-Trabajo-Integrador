@@ -183,9 +183,8 @@
             boton.addEventListener('click', function () {
                 const salonId = this.getAttribute('data-salon-id');
                 const precio = this.getAttribute('data-precio');
-
-                document.getElementById('reservaModalBody').innerText =
-                    ¡Felicitaciones! Has reservado el salón "${salonId}" por $${precio};
+                document.getElementById('reservaModalBody').innerText = 
+                 '¡Felicitaciones! Has reservado el salón "${salonId}" por $${precio}';
                 const reservaModal = new bootstrap.Modal(document.getElementById('reservaModal'));
                 reservaModal.show();
                 boton.textContent = 'Reservado';
