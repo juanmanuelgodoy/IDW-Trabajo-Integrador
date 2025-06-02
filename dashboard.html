@@ -50,7 +50,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="nuevoSalonLabel">Crear nuevo salón</h5>
+                            <h5 class="modal-title" id="nuevoSalonLabel">Crear/editar nuevo salón</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                 aria-label="Cerrar"></button>
                         </div>
@@ -58,23 +58,23 @@
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-nombre">Nombre</span>
                                 <input type="text" class="form-control" id="nombreSalon"
-                                    aria-describedby="inputGroup-sizing-nombre">
+                                    aria-describedby="inputGroup-sizing-nombre" required>
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-direccion">Dirección</span>
                                 <input type="text" class="form-control" id="direccionSalon"
-                                    aria-describedby="inputGroup-sizing-direccion">
+                                    aria-describedby="inputGroup-sizing-direccion" required>
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-descripcion">Descripción</span>
                                 <input type="text" class="form-control" id="descripcionSalon"
-                                    aria-describedby="inputGroup-sizing-descripcion">
+                                    aria-describedby="inputGroup-sizing-descripcion" required>
                             </div>
                             <div class="input-group mb-3">
                                 <label class="form-label">Precio</label>
                                 <div class="input-group">
                                     <span class="input-group-text">$</span>
-                                    <input id="precioSalon" type="text" class="form-control">
+                                    <input id="precioSalon" type="number" class="form-control" required>
                                     <span class="input-group-text">.00</span>
                                 </div>
                             </div>
@@ -119,7 +119,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="nuevoServicioLabel">Crear nuevo servicio</h5>
+                            <h5 class="modal-title" id="nuevoServicioLabel">Crear/editar nuevo servicio</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                 aria-label="Cerrar"></button>
                         </div>
@@ -127,17 +127,17 @@
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-nombre">Nombre</span>
                                 <input type="text" class="form-control" id="nombreServicio"
-                                    aria-describedby="inputGroup-sizing-nombre">
+                                    aria-describedby="inputGroup-sizing-nombre" required>
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">$</span>
-                                <input type="text" class="form-control" id="precioServicio">
+                                <input type="text" class="form-control" id="precioServicio" required>
                                 <span class="input-group-text">.00</span>
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-descripcion">Descripción</span>
                                 <input type="text" class="form-control" id="descripcionServicio"
-                                    aria-describedby="inputGroup-sizing-descripcion">
+                                    aria-describedby="inputGroup-sizing-descripcion" required>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -178,7 +178,7 @@
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="nuevoImagenLabel">Crear nueva imagen</h5>
+                            <h5 class="modal-title" id="nuevoImagenLabel">Crear/editar nueva imagen</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                 aria-label="Cerrar"></button>
                         </div>
@@ -186,14 +186,14 @@
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-nombreImagen">Nombre</span>
                                 <input id="nombreImagen" type="text" class="form-control"
-                                    aria-label="Nombre de la imagen" aria-describedby="inputGroup-sizing-nombreImagen">
+                                    id="Nombre de la imagen" aria-describedby="inputGroup-sizing-nombreImagen" required>
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text"
                                     id="inputGroup-sizing-descripcionImagen">Descripción</span>
                                 <input id="descripcionImagen" type="text" class="form-control"
-                                    aria-label="Descripción de la imagen"
-                                    aria-describedby="inputGroup-sizing-descripcionImagen">
+                                    id="Descripción de la imagen"
+                                    aria-describedby="inputGroup-sizing-descripcionImagen" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Seleccionar imagen</label>
@@ -202,7 +202,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-primary">Guardar</button>
+                            <button type="button" class="btn btn-primary" id="btnGuardarImagen">Guardar</button>
                         </div>
                     </div>
                 </div>
@@ -220,7 +220,7 @@
                             <th scope="col">Acciones</th>
                         </tr>
                     </thead>
-                    <tbody id="tablaServiciosBody">
+                    <tbody id="tablaImagenesBody">
 
                     </tbody>
                 </table>
@@ -241,7 +241,7 @@
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="nuevoPresupuestoLabel">Crear nuevo presupuesto</h5>
+                            <h5 class="modal-title" id="nuevoPresupuestoLabel">Crear/editar nuevo presupuesto</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                 aria-label="Cerrar"></button>
                         </div>
@@ -249,20 +249,20 @@
                             <div class="row g-3">
                                 <div class="col-12 col-md-6">
                                     <label class="form-label">Apellido</label>
-                                    <input id="apellidoPresu" type="text" class="form-control">
+                                    <input id="apellidoPresu" type="text" class="form-control" required>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label class="form-label">Nombre</label>
-                                    <input id="nombrePresu" type="text" class="form-control">
+                                    <input id="nombrePresu" type="text" class="form-control" required>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label class="form-label">Teléfono</label>
-                                    <input id="telefonoPresu" type="text" class="form-control">
+                                    <input id="telefonoPresu" type="text" class="form-control" required>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label class="form-label">Email</label>
                                     <input id="emailPresu" type="email" class="form-control"
-                                        placeholder="usuario@correo.com">
+                                        placeholder="usuario@correo.com" required>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label class="form-label">Opciones de salón</label>
@@ -277,7 +277,7 @@
                                     <label class="form-label">Precio</label>
                                     <div class="input-group">
                                         <span class="input-group-text">$</span>
-                                        <input id="precioPresu" type="text" class="form-control">
+                                        <input id="precioPresu" type="text" class="form-control" required>
                                         <span class="input-group-text">.00</span>
                                     </div>
                                 </div>
@@ -363,10 +363,10 @@
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
 
-    <script src="../js/salon.js"></script>
-    <script src="../js/servicio.js"></script>
-    <script src="../js/imagen.js"></script>
-    <script src="../js/presupuesto.js"></script>
+    <script src="../js/salon.js" defer></script>
+    <script src="../js/servicio.js" defer></script>
+    <script src="../js/imagen.js" defer></script>
+    <script src="../js/presupuesto.js" defer></script>
 
 </body>
 

@@ -36,18 +36,18 @@ function renderizarPresupuestos() {
             <td>${presu.salon}</td>
             <td>$${new Intl.NumberFormat('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(presu.precioPresupuesto)}</td>
             <td>
-                <button class="btn btn-sm btn-primary editar-btn" data-index="${index}">Editar</button>
-                <button class="btn btn-sm btn-danger eliminar-btn" data-index="${index}">Eliminar</button>
+                <button class="btn btn-sm btn-primary editarPresupuesto-btn" data-index="${index}">Editar</button>
+                <button class="btn btn-sm btn-danger eliminarPresupuesto-btn" data-index="${index}">Eliminar</button>
             </td>
         `;
         tablaBodyPresupuesto.appendChild(fila);
     });
 
-    document.querySelectorAll('.eliminar-btn').forEach(btn =>
+    document.querySelectorAll('.eliminarPresupuesto-btn').forEach(btn =>
         btn.addEventListener('click', eliminarPresupuesto)
     );
 
-    document.querySelectorAll('.editar-btn').forEach(btn =>
+    document.querySelectorAll('.editarPresupuesto-btn').forEach(btn =>
         btn.addEventListener('click', editarPresupuesto)
     );
 }

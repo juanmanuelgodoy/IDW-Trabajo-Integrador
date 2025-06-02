@@ -30,18 +30,18 @@ function renderizarServicios() {
             <td>$${new Intl.NumberFormat('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(servicio.precioServicio)}</td>
             <td>${servicio.descripcionServicio}</td>
             <td>
-                <button class="btn btn-sm btn-primary editar-btn" data-index="${index}">Editar</button>
-                <button class="btn btn-sm btn-danger eliminar-btn" data-index="${index}">Eliminar</button>
+                <button class="btn btn-sm btn-primary editarServicio-btn" data-index="${index}">Editar</button>
+                <button class="btn btn-sm btn-danger eliminarServicio-btn" data-index="${index}">Eliminar</button>
             </td>
         `;
         tablaBodyServicio.appendChild(fila);
     });
 
-    document.querySelectorAll('.eliminar-btn').forEach(btn =>
+    document.querySelectorAll('.eliminarServicio-btn').forEach(btn =>
         btn.addEventListener('click', eliminarServicio)
     );
 
-    document.querySelectorAll('.editar-btn').forEach(btn =>
+    document.querySelectorAll('.editarServicio-btn').forEach(btn =>
         btn.addEventListener('click', editarServicio)
     );
 }
